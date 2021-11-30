@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./facture.component.css']
 })
 export class FactureComponent implements OnInit {
-
+  quantity: number =0;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  IncrementQuantity(): void{
+    this.quantity ++;
+    
+  }
+  decrementQuantity(): void{
+    if(this.quantity>0)
+    {
+      this.quantity --;
+    }
+    
+  }
 }
