@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { Router, RouterModule } from '@angular/router';
+import { FavorisComponent } from './favoris/favoris.component';
 
 
 
@@ -16,7 +17,8 @@ import { Router, RouterModule } from '@angular/router';
     MainProductComponent,
     SingleProductComponent,
     AddProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    FavorisComponent
   ],
   imports: [
     CommonModule,

@@ -16,7 +16,23 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h5>{{product.libelle}}</h5><a class="fs--1 mb-2 d-block" href="#!">{{product.categorieProduit}}</a>
+                <div class="row">
+                    <div class="col">
+                        <h5>{{product.libelle}}</h5><a class="fs--1 mb-2 d-block"
+                            href="#!">{{product.categorieProduit}}</a>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-sm btn-falcon-default me-2" style="position:relative; left:60%" (click)="addToFavoris(favoris)" data-bs-toggle="tooltip"
+                            data-bs-placement="right" title="" data-bs-original-title="Add to Wish List"
+                            aria-label="Add to Wish List"><svg class="svg-inline--fa fa-heart fa-w-16"
+                                aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                    d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
                 <div class="fs--2 mb-3 d-inline-block text-decoration-none"><svg
                         class="svg-inline--fa fa-star fa-w-18 text-warning" aria-hidden="true" focusable="false"
                         data-prefix="fa" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -254,14 +270,18 @@
                                                     😍</span>
                                                 <p class="fs--1 mb-2 text-600">By Drik Smith • October 14, 2019</p>
                                             </div>
-                                            <div class="col-auto px-0"><a class="btn btn-sm btn-outline-success border-300" data-bs-toggle="tooltip"
-                                                data-bs-placement="top" (click)="editComment(feedback)" >
-                                                <i class="far fa-edit"></i> </a>
-                                              </div>
-                                              <div class="col-auto px-0"><a class="btn btn-sm btn-outline-danger border-300" data-bs-toggle="tooltip"
-                                                data-bs-placement="top" (click)="deleteComment(feedback)" >
-                                                <i class="far fa-trash-alt"></i> </a>
-                                              </div>
+                                            <div class="col-auto px-0"><a
+                                                    class="btn btn-sm btn-outline-success border-300"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    (click)="editComment(feedback)">
+                                                    <i class="far fa-edit"></i> </a>
+                                            </div>
+                                            <div class="col-auto px-0"><a
+                                                    class="btn btn-sm btn-outline-danger border-300"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    (click)="deleteComment(feedback)">
+                                                    <i class="far fa-trash-alt"></i> </a>
+                                            </div>
                                         </div>
                                         <hr class="my-4">
                                     </div>

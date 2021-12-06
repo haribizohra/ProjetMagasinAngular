@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Favoris } from 'src/app/models/favoris';
 import { Feedback } from 'src/app/models/feedback';
 import { product } from 'src/app/models/product';
+import { FavorisService } from 'src/app/services/favoris.service';
 import { FeedbackService } from 'src/app/services/feedback.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -20,8 +22,9 @@ export class ProductDetailsComponent implements OnInit {
   likes: number;
   dislikes: number;
   myForm: FormGroup;
+  favoris: Favoris = new Favoris();
 
-  constructor(private productService: ProductService, private feedbackService: FeedbackService, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private feedbackService: FeedbackService, private route: ActivatedRoute, private favorisService: FavorisService, private _router: Router) { }
 
   ngOnInit(): void {
 
@@ -49,7 +52,7 @@ export class ProductDetailsComponent implements OnInit {
 
   getProduct(idProduct: number) {
     this.productService.findProduct(this.idProduct).subscribe((data: any) => {
-      console.log(data);
+    //  console.log(data);
       this.product = data
     }
     );
@@ -92,8 +95,9 @@ export class ProductDetailsComponent implements OnInit {
     }
     else {
       this.feedback.commentaire = this.myForm.value.commentaire;
-      this.feedbackService.addComment(this.feedback, this.idProduct, 2).subscribe((data: any) => {
-        this.feedbacks.push(this.feedback)
+      this.feedbackService.addComment(this.feedback, this.idProduct, 2).subscribe((data:any) => {
+        console.log(data)
+        this.feedbacks.push(data)
       });
 
     }
@@ -135,6 +139,15 @@ export class ProductDetailsComponent implements OnInit {
     localStorage.setItem('id', "" + feedback.idFeedback);
 
 
+  }
+
+  addToFavoris(favoris:Favoris){
+    this.favorisService.addFavoris(favoris, this.idProduct, 2).subscribe(()=>{
+      this._router.navigate(['/favoris']);
+      console.log(favoris)
+    }
+     
+      )
   }
 
 

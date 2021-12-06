@@ -26,6 +26,7 @@ export class MainProductComponent implements OnInit {
     this.productService.getProductList().subscribe(
       data => {
         this.products = data;
+        console.log(this.products)
       }
     );
 
@@ -38,13 +39,15 @@ export class MainProductComponent implements OnInit {
     let i = this.products.indexOf(product);
 
     if (i != -1) {
-      this.productService.updateProduct(product).subscribe(() => this.products[i] = product);
+      this.productService.updateProduct(product).subscribe((data) => this.products[i] = data);
       swal("Success!", "Product updated!", "success");
       
     }
     else {
 
-      this.productService.addProduct(product).subscribe(() => this.products.push(product));
+      this.productService.addProduct(product).subscribe((data) => {
+        console.log(data);
+        this.products.push(data)});
       swal("Success!", "Product added!", "success");
      
     }

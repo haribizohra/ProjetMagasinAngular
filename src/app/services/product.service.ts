@@ -20,11 +20,11 @@ export class ProductService {
   }
 
   addProduct(product:product){
-    return this.HttpClient.post(this.baseUrl+'/add',product);
+    return this.HttpClient.post<product>(this.baseUrl+'/add',product);
   }
 
   updateProduct(product:product){
-    return this.HttpClient.put(this.baseUrl+'/update',product);
+    return this.HttpClient.put<product>(this.baseUrl+'/update',product);
 
   }
 
