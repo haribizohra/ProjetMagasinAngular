@@ -15,111 +15,18 @@
     
     
 
+    <app-details-facture [dfac]="d" *ngFor="let d of listDetailsFactures" (deletedfEvent)="deleteDetailsFacture($event)" (decrementQuantityEvent)="decrementQuantity($event)" (incrementQuantityEvent)="IncrementQuantity($event)">
+
+    </app-details-facture>
 
 
+    <div class="card text-dark bg-light mb-3 mx-3" >
+        <div class="card-header">Etes-vous prets pour passer la commande?</div>
+        <p class="card-text"><button class="btn btn-primary ">Passer la commande</button></p>
+        &nbsp;
 
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-<div> 
-<div class="row">
-<div class="col-6">
-<div class="card mb-3" style="max-width: 600px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/assets/customer.png" class="img-fluid rounded-start" alt="...">
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Nom Produit 1</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <div>
-            <button class="btn btn-light bi bi-heart">&nbsp;Ajouter à mes favoris</button>
-            &nbsp;
-            <button class="btn btn-light bi bi-trash">&nbsp;Supprimer</button>
-
-          </div>
-        </div>
-      </div>
-      
-    </div>
-
-
-    
-
-</div>
-
-</div>
-<div class="col row align-items-center" >
-    <div class="d-flex justify-content-center" >
-
-        <div class="p-2"><button class="btn btn-primary">-</button></div>
-        <div class="p-2"><p>2</p></div>
-        <div class="p-2"><button class="btn btn-primary">+</button></div>
-    </div>
-
- 
-</div>
-
-<div class="col  row align-items-center"><p class="text-center"> 10.00 DT</p> </div>
-<div class="col  row align-items-center"><p class="text-center"> 20.00 DT  </p></div> 
-
-
-
-<!-- debut produit panier-->
-
-<div class="container">
-    <div> 
-    <div class="row">
-    <div class="col-6">
-    <div class="card mb-3" style="max-width: 600px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="/assets/customer.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Nom Produit 1</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div>
-                <button class="btn btn-light bi bi-heart">&nbsp;Ajouter à mes favoris</button>
-                &nbsp;
-                <button class="btn btn-light bi bi-trash">&nbsp;Supprimer</button>
-    
-              </div>
-            </div>
-          </div>
-          
-        </div>
-    </div>
-    
-    </div>
-    <div class="col row align-items-center" >
-        <div class="d-flex justify-content-center" >
-
-            <div class="p-2"><button class="btn btn-primary" (click)="decrementQuantity()">-</button></div>
-            <div class="p-2"><p>{{quantity}}</p></div>
-            <div class="p-2"><button class="btn btn-primary" (click)="IncrementQuantity()">+</button></div>
-        </div>
-    
-     
-    </div>
-
-    <div class="col  row align-items-center"><p class="text-center"> 10.00 DT</p> </div>
-    <div class="col  row align-items-center"><p class="text-center"> 20.00 DT  </p></div> 
-    
-<!-- fin produit panier-->
-
-
-
 
 
 </div>
+

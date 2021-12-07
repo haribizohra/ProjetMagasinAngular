@@ -1,1 +1,41 @@
-<p>details-facture works!</p>
+<div class="container">
+    <div> 
+    <div class="row">
+    <div class="col-6">
+    <div class="card mb-3" style="max-width: 600px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/assets/customer.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{dfac.quantite}}</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div>
+             <!--   <button class="btn btn-light bi bi-heart">&nbsp;Ajouter à mes favoris</button>
+                &nbsp;-->
+                <button class="btn btn-light bi bi-trash" (click)="deleteNotif()">&nbsp;Supprimer</button>
+    
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+    
+    </div>
+    <div class="col row align-items-center" >
+        <div class="d-flex justify-content-center" >
+
+            <div class="p-2"><button class="btn btn-primary" (click)="decrementNotif()">-</button></div>
+            <div class="p-2"><p>{{dfac.quantite}}</p></div>
+            <div class="p-2"><button class="btn btn-primary" (click)="incrementNotif()">+</button></div>
+        </div>
+    
+     
+    </div>
+
+    <div class="col  row align-items-center"><p class="text-center"> 10.00 DT</p> </div>
+    <div class="col  row align-items-center"><p class="text-center"> 20.00 DT  </p></div> 
+    
+<!-- fin produit panier-->

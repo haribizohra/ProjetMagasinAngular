@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DetailsFacture } from 'src/app/models/detailsFacture';
 
 @Component({
   selector: 'app-facture',
@@ -7,19 +8,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FactureComponent implements OnInit {
   quantity: number =0;
+  listDetailsFactures: DetailsFacture[];
   constructor() { }
 
   ngOnInit(): void {
+    this.listDetailsFactures=[
+      {
+        idDetailFacture:1,
+        quantite: 1,
+        sousTotal: 1,
+        pourcentageRemise: 10,
+        montantRemise: 10,
+        idProduit: 1,
+        idFacture: 1,
+      },
+      {
+        idDetailFacture:2,
+        quantite: 1,
+        sousTotal: 1,
+        pourcentageRemise: 10,
+        montantRemise: 10,
+        idProduit: 1,
+        idFacture: 1,
+      }
+
+    ];
   }
-  IncrementQuantity(): void{
-    this.quantity ++;
+  IncrementQuantity(d:DetailsFacture): void{
+    let i=this.listDetailsFactures.indexOf(d);
+    if(this.listDetailsFactures[i].quantite<10)
+    {this.listDetailsFactures[i].quantite++;}
+
     
   }
-  decrementQuantity(): void{
-    if(this.quantity>0)
+  decrementQuantity(d:DetailsFacture): void{
+    let i=this.listDetailsFactures.indexOf(d);
+    if(this.listDetailsFactures[i].quantite>0)
     {
-      this.quantity --;
+      this.listDetailsFactures[i].quantite--;
     }
+    
+  }
+
+  deleteDetailsFacture(d:DetailsFacture):void{
+   
+      let i = this.listDetailsFactures.indexOf(d);
+      //this.listDetailsFactures.deleteProductService(d.id).subscribe(
+        //()=>this.listProduct.splice(i,1)
+      //)
+      this.listDetailsFactures.splice(i,1);
     
   }
 }

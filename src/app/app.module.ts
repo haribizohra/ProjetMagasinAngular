@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ContentComponent } from './content/content.component';
 import { ProductModule } from './product/product.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FactureModule } from './facture/facture.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     ProductModule,
+    FactureModule,
     HttpClientModule
   ],
   providers: [],
