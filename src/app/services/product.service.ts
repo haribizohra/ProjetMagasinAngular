@@ -35,4 +35,8 @@ export class ProductService {
   findProduct(idProduct: number){
     return this.HttpClient.get(this.baseUrl+'/retrive/'+idProduct);
   }
+
+  nombreProducts(){
+    return this.HttpClient.get(this.baseUrl+'/count');
+  }
 }

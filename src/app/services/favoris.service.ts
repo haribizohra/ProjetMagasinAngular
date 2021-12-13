@@ -25,6 +25,11 @@ export class FavorisService {
     return this.HttpClient.delete(this.baseUrl+'/delete/'+idFavoris);
   }
 
+  findFav(idProduct: number,idUser: number){
+    
+    return this.HttpClient.get(this.baseUrl+'/findFav/'+idProduct+"/"+idUser);
+  }
+
 
 
 }

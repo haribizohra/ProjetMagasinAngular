@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
+import { observable } from 'rxjs';
 import { Favoris } from 'src/app/models/favoris';
 import { product } from 'src/app/models/product';
 import { FavorisService } from 'src/app/services/favoris.service';
@@ -36,6 +37,7 @@ export class FavorisComponent implements OnInit {
           this.product.prixUnitaire = data[i][5];
           this.product.picture = data[i][6];
           this.product.dateCreation = data[i][7];
+          this.product.idProduit = data[i][1];
           this.products.push(this.product);
             }
         }
@@ -44,15 +46,12 @@ export class FavorisComponent implements OnInit {
   }
 
   deleteFavoris(favoris: Favoris , product:product){
- //   console.log(this.listFavoris);
     let i = this.products.indexOf(product);
-    console.log(this.listFavoris[i][0])
-    console.log(i)
-   // favoris.idFavoris=this.listFavoris[i][0];
+      favoris.idFavoris=this.listFavoris[i][0];
       this.favorisService.deleteFavoris(favoris.idFavoris).subscribe(data => {
-      this.listFavoris.splice(i, 1)
+      this.listFavoris.splice(i, 1);
+      this.products.splice(i,1);
       });
-
   } 
 
 }

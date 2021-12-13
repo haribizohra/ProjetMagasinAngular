@@ -23,6 +23,7 @@ export class ProductDetailsComponent implements OnInit {
   dislikes: number;
   myForm: FormGroup;
   favoris: Favoris = new Favoris();
+  disabledFav:Boolean=false;
 
   constructor(private productService: ProductService, private feedbackService: FeedbackService, private route: ActivatedRoute, private favorisService: FavorisService, private _router: Router) { }
 
@@ -43,6 +44,14 @@ export class ProductDetailsComponent implements OnInit {
     this.countDislikes(this.idProduct);
     this.countLikes(this.idProduct);
     this.getAllComments(this.idProduct);
+
+    this.favorisService.findFav(this.idProduct,2).subscribe((data:any)=>{
+      console.log(data)
+      if(data!=null){
+        this.disabledFav=true;
+      }
+      console.log(this.disabledFav)
+    });
 
 
     console.log(this.likes);
@@ -87,7 +96,7 @@ export class ProductDetailsComponent implements OnInit {
     if (localStorage.getItem('index')?.length) {
       this.feedback.commentaire = this.myForm.value.commentaire;
       this.feedbackService.updateComment(feedback, id).subscribe((data: any) => {
-        this.feedbacks[i] = feedback
+        this.feedbacks[i] = data
         console.log(i)
       });
       localStorage.removeItem('id');

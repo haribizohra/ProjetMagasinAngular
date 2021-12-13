@@ -8,6 +8,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { AppRoutingModule } from '../app-routing.module';
 import { Router, RouterModule } from '@angular/router';
 import { FavorisComponent } from './favoris/favoris.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -25,7 +26,8 @@ import { FavorisComponent } from './favoris/favoris.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   exports: [
     MainProductComponent,

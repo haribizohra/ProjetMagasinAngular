@@ -22,7 +22,7 @@
                             href="#!">{{product.categorieProduit}}</a>
                     </div>
                     <div class="col">
-                        <a class="btn btn-sm btn-falcon-default me-2" style="position:relative; left:60%" (click)="addToFavoris(favoris)" data-bs-toggle="tooltip"
+                        <button class="btn btn-sm btn-falcon-default me-2" style="position:relative; left:60%" [disabled]="disabledFav" (click)="addToFavoris(favoris)" data-bs-toggle="tooltip"
                             data-bs-placement="right" title="" data-bs-original-title="Add to Wish List"
                             aria-label="Add to Wish List"><svg class="svg-inline--fa fa-heart fa-w-16"
                                 aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img"
@@ -30,7 +30,7 @@
                                 <path fill="currentColor"
                                     d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
                                 </path>
-                            </svg></a>
+                            </svg></button>
                     </div>
                 </div>
                 <div class="fs--2 mb-3 d-inline-block text-decoration-none"><svg
@@ -69,8 +69,6 @@
                             d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z">
                         </path>
                     </svg>
-                    <!-- <span class="fa fa-star-half-alt text-warning star-icon"></span> Font Awesome fontawesome.com --><span
-                        class="ms-1 text-600">(8)</span>
                 </div>
                 <p class="fs--1"> code: <strong>{{product.code}}</strong></p>
                 <p class="fs--1">Description: <strong>Testing conducted by Apple in October 2018 using pre-production

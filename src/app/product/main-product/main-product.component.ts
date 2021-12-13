@@ -11,6 +11,13 @@ import swal from 'sweetalert';
 export class MainProductComponent implements OnInit {
   products: product[];
   inputProduct: product;
+
+  page = 1;
+  count = 0;
+  tableSize = 5;
+  tableSizes = [3, 6, 9, 12];
+
+  nombreProd : number ;
  
 
 
@@ -19,6 +26,10 @@ export class MainProductComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
     this.inputProduct = new product();
+
+    this.productService.nombreProducts().subscribe((data:any) => this.nombreProd=data);
+
+
 
   }
 
@@ -47,8 +58,12 @@ export class MainProductComponent implements OnInit {
 
       this.productService.addProduct(product).subscribe((data) => {
         console.log(data);
-        this.products.push(data)});
-      swal("Success!", "Product added!", "success");
+        this.products.push(data)
+        this.productService.nombreProducts().subscribe((data:any) => this.nombreProd=data);
+        swal("Success!", "Product added!", "success");
+      });
+      
+      
      
     }
   
@@ -80,14 +95,27 @@ export class MainProductComponent implements OnInit {
         let i = this.products.indexOf(product);
       this.productService.deleteProduct(product.idProduit).subscribe(data => {
       this.products.splice(i, 1)
+      this.productService.nombreProducts().subscribe((data:any) => this.nombreProd=data);
+      swal("Product has been deleted!", {
+        icon: "success",
       });
-        swal("Product has been deleted!", {
-          icon: "success",
-        });
+      });
+        
       } else {
         swal("Product  is safe!");
       }
     });
+  }
+
+  onTableDataChange(event:any){
+    this.page = event;
+    this.getProducts();
+  }  
+
+  onTableSizeChange(event:any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getProducts();
   }
 
 }
