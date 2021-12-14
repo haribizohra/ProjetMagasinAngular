@@ -1,0 +1,31 @@
+<form class="col g-3 needs-validation" #f="ngForm">
+    <div class="form-floating mb-3">
+      <input class="form-control" id="floatingInput" name="libelle"  type="text" placeholder="libelle"
+        required minlength="3"  ngModel #l="ngModel"/>
+      <label >Libelle</label>
+    </div>
+    <div class="font-alert text-danger mb-3" *ngIf="l.invalid && l.touched">
+      <div *ngIf="l.hasError('required')">Libelle is required</div>
+      <div *ngIf="l.hasError('minlength')" >Min Length is 3</div>
+    </div>
+  
+    <div class="form-floating mb-3">
+      <input class="form-control" id="floatingInput" name="dateFin"  type="date" placeholder="Date Fin" ngModel/>
+      <label >Date de creation</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" id="floatingInput" name="pourcentage" ngModel type="number" placeholder="libelle"
+        required maxlength="3" minlength="1"  pattern="^[0-9]*$" max="100"min="1" ngModel #p="ngModel"/>
+      <label >Pourcentage</label>
+    </div>
+    <div class="font-alert text-danger mb-3" *ngIf="p.invalid && p.touched">
+      <div *ngIf="p.hasError('required')">pourcentage is required</div>
+      <div *ngIf="p.hasError('pattern')">Le pourcentage doit un nombre entier!</div>
+      <div *ngIf="p.hasError('max')">Le pourcentage ne doit pas dépasser pas 100%</div>
+      <div *ngIf="p.hasError('min')">Le pourcentage doit etre supérieur à 1%</div>
+    </div>
+   
+    <button class="btn btn-primary mb-3" [disabled]="f.invalid">Save</button>
+  
+  </form>

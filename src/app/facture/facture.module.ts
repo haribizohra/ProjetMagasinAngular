@@ -6,6 +6,8 @@ import { CouponComponent } from './coupon/coupon.component';
 import { Router, RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddCouponComponent } from './add-coupon/add-coupon.component';
+import { SingleCouponComponent } from './single-coupon/single-coupon.component';
 
 
 
@@ -14,7 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     DetailsFactureComponent,
     FactureComponent,
-    CouponComponent
+    CouponComponent,
+    AddCouponComponent,
+    SingleCouponComponent
   ],
   imports: [
     CommonModule,

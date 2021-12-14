@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url : "http://localhost:8088/GestionMagasinStock/"
+  url : "http://localhost:8089/SpringMVC/"
 };
 
 /*

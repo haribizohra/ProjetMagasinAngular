@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CouponComponent } from './facture/coupon/coupon.component';
 import { FactureComponent } from './facture/facture/facture.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MainProductComponent } from './product/main-product/main-product.component';
@@ -11,7 +12,9 @@ const routes: Routes = [
   {path: 'products/details/:id', component:ProductDetailsComponent},
   {path: 'facture', component:FactureComponent},
   {path:'', component:MainProductComponent},
+  {path: 'coupon', component:CouponComponent},
   {path:'**', component:NotFoundComponent}
+ 
 ];
 
 @NgModule({

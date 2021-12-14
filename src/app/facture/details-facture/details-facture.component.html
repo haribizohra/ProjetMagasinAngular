@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div> 
     <div class="row">
     <div class="col-6">
@@ -12,8 +12,8 @@
               <h5 class="card-title">{{dfac.quantite}}</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div>
-             <!--   <button class="btn btn-light bi bi-heart">&nbsp;Ajouter à mes favoris</button>
-                &nbsp;-->
+             <  <button class="btn btn-light bi bi-heart">&nbsp;Ajouter à mes favoris</button>
+                &nbsp;
                 <button class="btn btn-light bi bi-trash" (click)="deleteNotif()">&nbsp;Supprimer</button>
     
               </div>
@@ -38,4 +38,33 @@
     <div class="col  row align-items-center"><p class="text-center"> 10.00 DT</p> </div>
     <div class="col  row align-items-center"><p class="text-center"> 20.00 DT  </p></div> 
     
-<!-- fin produit panier-->
+fin produit panier-->
+
+
+
+                <!-- Product 1 start-->
+                <div class="row gx-card mx-0 align-items-center border-bottom border-200">
+                  <div class="col-8 py-3">
+                  <div class="d-flex align-items-center"><a href="../../app/e-commerce/product/product-details.html"><img class="img-fluid rounded-1 me-3 d-none d-md-block" src="../../assets/img/products/1.jpg" alt="" width="60" /></a>
+                      <div class="flex-1">
+                      <h5 class="fs-0"><a class="text-900" href="../../app/e-commerce/product/product-details.html">id:{{dfac.idProduit}}&quot; Z0V20008N: 2.9GHz 6-core 8th-Gen Intel Core i9, 32GB RAM</a></h5>
+                      <div class="fs--2 fs-md--1"><a class="text-danger" (click)="deleteNotif()" >Remove</a></div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-4 py-3">
+                  <div class="row align-items-center">
+                      <div class="col-md-8 d-flex justify-content-end justify-content-md-center order-1 order-md-0">
+                      <div>
+                          <div class="input-group input-group-sm flex-nowrap" data-quantity="data-quantity">
+                          <button class="btn btn-sm btn-primary border-300 px-2"  (click)="decrementNotif()">-</button>
+                          <input class="form-control text-center px-2 input-spin-none" type="number" min="0" max="10 "value={{dfac.quantite}} aria-label="Amount (to the nearest dollar)" style="width: 50px" />
+                          <button class="btn btn-sm btn-primary border-300 px-2"  (click)="incrementNotif()" >+</button>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-md-4 text-end ps-0 order-0 order-md-1 mb-2 mb-md-0 text-600">$1292</div>
+                  </div>
+                  </div>
+              </div>
+  <!-- Product 1 ends-->

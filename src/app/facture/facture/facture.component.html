@@ -1,6 +1,6 @@
 
-
-<div> 
+<!--
+    <div> 
 
     <div class="row">
         <div class="col-6">
@@ -29,4 +29,101 @@
 
 
 </div>
+
+-->
+
+
+
+
+
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="container" data-layout="container">
+                        <script>
+                        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+                        if (isFluid) {
+                            var container = document.querySelector('[data-layout]');
+                            container.classList.remove('container');
+                            container.classList.add('container-fluid');
+                        }
+                        </script>
+
+                        <div class="card">
+                            <div class="card-header">
+                            <div class="row justify-content-between">
+                                <div class="col-md-auto">
+                                <h5 class="mb-3 mb-md-0">Shopping Cart (7 Items)</h5>
+                                </div>
+                                <div class="col-md-auto"><a class="btn btn-sm btn-outline-secondary border-300 me-2" routerLink="/products"> <span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4"></span>Continue Shopping</a><a class="btn btn-sm btn-primary" href="../../app/e-commerce/checkout.html">Checkout</a>&nbsp; <a class="btn btn-sm btn-primary" routerLink="/coupon">Coupon</a></div>
+                            </div>
+                            </div>
+                            <div class="card-body p-0">
+                            <div class="row gx-card mx-0 bg-200 text-900 fs--1 fw-semi-bold">
+                                <div class="col-9 col-md-8 py-2">Name</div>
+                                <div class="col-3 col-md-4">
+                                <div class="row">
+                                    <div class="col-md-8 py-2 d-none d-md-block text-center">Quantity</div>
+                                    <div class="col-12 col-md-4 text-end py-2">Price</div>
+                                </div>
+                                </div>
+                            </div>
+                            
+
+
+
+
+                            <app-details-facture [dfac]="d" *ngFor="let d of listDetailsFactures" (deletedfEvent)="deleteDetailsFacture($event)" (decrementQuantityEvent)="decrementQuantity($event)" (incrementQuantityEvent)="IncrementQuantity($event)">
+
+                            </app-details-facture>
+
+
+
+
+
+                            
+                            
+                            <div class="row fw-bold gx-card mx-0">
+                                <div class="col-9 col-md-8 py-2 text-end text-900">Total</div>
+                                <div class="col px-0">
+                                <div class="row gx-card mx-0">
+                                    <div class="col-md-8 py-2 d-none d-md-block text-center">7 (items)</div>
+                                    <div class="col-12 col-md-4 text-end py-2">$8516</div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card-footer bg-light d-flex justify-content-end">
+                            <form class="me-3">
+                                <div class="input-group input-group-sm">
+                                <input class="form-control" type="text" placeholder="Promocode" />
+                                <button class="btn btn-outline-secondary border-300 btn-sm" type="submit">Apply</button>
+                                </div>
+                            </form><a class="btn btn-sm btn-primary" href="../../app/e-commerce/checkout.html">Checkout</a>
+                            </div>
+                        </div>
+
+                        
+        </div>
+      
+    </main>
+
 
