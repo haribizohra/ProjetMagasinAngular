@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Coupon } from 'src/app/models/coupon';
 
 @Component({
   selector: 'app-single-coupon',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-coupon.component.css']
 })
 export class SingleCouponComponent implements OnInit {
-
+  @Input()c: Coupon;
   constructor() { }
 
   ngOnInit(): void {

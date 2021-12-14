@@ -3,4 +3,6 @@
 <br>
 <br>
 <h3>Liste des coupons</h3>
-<app-single-coupon></app-single-coupon>
+<app-single-coupon *ngFor="let currentItem of listCoupons" [c]="currentItem" >
+
+</app-single-coupon>
